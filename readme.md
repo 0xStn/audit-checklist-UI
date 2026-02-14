@@ -2,6 +2,13 @@
 
 _The checklist is hosted at [Solodit]([https://solodit.xyz](https://solodit.xyz/checklist))_
 
+## UI Highlights (Local Explorer)
+- Fast search across question, description, remediation, and category path
+- Category filter that matches at any depth + tag filtering
+- Sorting + optional grouping by top-level category
+- Safe rendering (no HTML injection) and safe external links
+- Neon dark/light theme with improved typography
+
 ## Introduction
 
 In "[The Checklist Manifesto. How to Get Things Right](http://atulgawande.com/book/the-checklist-manifesto/)", Atul Gawande emphasizes the increasing prevalence of errors arising from oversight in complex tasks, advocating for the adoption of checklists as a solution, as demonstrated by their transformative impact on surgical outcomes.
@@ -26,6 +33,18 @@ Solodit aims to address this by introducing a comprehensive aggregation of vario
 We show the checklist on Solodit's website in a user-friendly format and allow you to check off items as you go through the audit process.
 
 However, you can also view the checklist in a raw JSON format [here](./checklist.json).
+
+### Local Explorer UI
+This repository includes a local Vue (Vite) explorer under `ui/` that lets you filter by category, search by description/remediation, and sort the checklist items.
+
+1. Install dependencies in `ui/`:
+	- `npm install`
+2. Start the dev server:
+	- `npm run dev`
+
+The UI reads the root `checklist.json` directly, so edits to the checklist are reflected after a dev server restart.
+
+You can also read the accompanying blog-style writeup in [`blog.md`](./blog.md).
 
 The checklist is divided into multiple categories, each containing a list of items to check for. Each item consists of an ID, an imperative statement, a question, a description, a remediation, and a list of references.
 
